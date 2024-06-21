@@ -12,25 +12,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
         python-version: 3.9
+
     - name: install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install requests        
+
     - name: run code
       run: |
         cd workbook
         python actions.py
+
     - name: commits
       run: |
         git config --local user.email "autoaction@autoaction.com"
         git config --local user.name "[bot]auto-workbook"
-        git add .
-        git commit -m "[bot]auto workbook update"
-        
+        if [ -n "$(git status --porcelain)" ]; then
+          git add .
+          git commit -m "[bot]auto workbook update"
+        else
+          echo "No changes to commit"
+        fi
+
     - name: push
       uses: ad-m/github-push-action@master
       with:
