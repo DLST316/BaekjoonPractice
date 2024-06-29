@@ -10,7 +10,7 @@ int main(){
     cin >> n;
     for (size_t i = 0; i < n; i++){
         cin >> input;
-        for (size_t j = 0; j < input; j++){
+        while(cnt <= input){
             ans += "+\n";
             my_stack.push(cnt++);
         }
