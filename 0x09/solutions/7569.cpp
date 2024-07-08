@@ -42,7 +42,15 @@ int main(void) {
       Q.push({nx, ny, nz});
     }
   }
-
+  for (int i = 0; i < h; i++) {
+        for (int j = 0; j < n; j++) {
+            for (int k = 0; k < m; k++) {
+                cout << dist[j][k][i] << " ";
+                
+            }
+            cout << "\n";
+        }
+    }
   int ans = 0;
   for (int i = 0; i < h; i++) {
     for (int j = 0; j < n; j++) {
