@@ -24,7 +24,7 @@ int main(void) {
   vector<int> brute(chicken.size(), 1);
   fill(brute.begin(), brute.begin() + chicken.size() - m, 0); // 앞의 chicken.size() - m 칸은 0, 뒤의 m칸은 1
   int mn = 0x7f7f7f7f; // 답을 저장할 변수
-  do{
+  do{// 모든 치킨집 조합에 대해서 집과 해당 치킨 조합사이의 거리를 구함 
     int dist = 0; // 도시의 치킨 거리를 저장할 변수
     for(auto h : house){
       int tmp = 0x7f7f7f7f; // 집의 치킨 거리를 저장할 변수
