@@ -2,12 +2,10 @@
 using namespace std;
 
 vector<pair<int,int>> freq;
-vector<pair<int,int>> first; //없어도 될듯?
 int n,c;
 
 bool cmp(const pair<int,int> p1, const pair<int,int> p2){
-    if(p1.second != p2.second) return p1.second > p2.second;
-    else return true;
+    return p1.second > p2.second; 
 }
 
 int main(){
@@ -31,7 +29,7 @@ int main(){
         }
     } 
 
-    sort(freq.begin(),freq.end(),cmp);
+    stable_sort(freq.begin(),freq.end(),cmp);
     for(auto p : freq){
         while(p.second--){
             cout << p.first << " ";
