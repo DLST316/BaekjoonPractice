@@ -8,7 +8,9 @@ int main(){
     cin.tie(0);
     cin >> n;
     
-    for (int i = 1; i <= n; i++) {
+    cin >> input;
+    DP[0] = input;
+    for (int i = 1; i < n; i++) {
         cin >> input;
         DP[i] = max(input,DP[i-1]+input);
     }
