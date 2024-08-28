@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
-string s,tmp,ans;
+
+string s,tmp;
+int ans;
 int sign = 1;
 int main(){
     ios::sync_with_stdio(0);
@@ -17,6 +19,6 @@ int main(){
         }
         
     }
-    
+    ans += stoi(tmp) * sign;
     cout << ans;
 }
