@@ -15,12 +15,12 @@ int main(){
     for (int st = 0; st < n; st++) {
         while (en < n && tmps < s){
             en++;
-            tmps += arr[en];
+            if(en != n)tmps += arr[en];
         }
         if(en == n) break;
         mn = min(mn,en-st+1);
         tmps-=arr[st];
     }
-    if(mn = INT32_MAX) mn = 0;
+    if(mn == INT32_MAX) mn = 0;
     cout << mn;
 }

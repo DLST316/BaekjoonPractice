@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 int arr[100005];
+
 int main(){
     ios::sync_with_stdio(0);
     cin.tie(0);
@@ -9,9 +10,13 @@ int main(){
     for (int i = 0; i < n; i++) cin >> arr[i];
     sort(arr,arr+n);
     int mn = INT32_MAX;
+
+    int en = 0;
     for (int i = 0; i < n; i++) {
-        int idx = lower_bound(arr,arr+n,arr[i] + m) - arr;
-        if(arr[idx] - arr[i] >= 0) mn = min(mn,arr[idx] - arr[i]);
+        while (en < n && arr[en] - arr[i] < m) en++;
+        if(en == n) break;
+        mn = min(mn, arr[en] - arr[i]);
+        
     }
     cout << mn;
         
