@@ -18,13 +18,11 @@ int main(){
         switch (op){
             case 1:
                 cin >> op;
-                auto it = places.find(op);
-                if(it != places.end()) places.erase(op);
+                if(places.find(op) != places.end()) places.erase(op);
                 else places.insert(op);
                 break;
             case 2:
                 cin >> op;
-                curr += op;
                 curr = (curr + op - 1) % N + 1;
                 break;
             case 3:
@@ -36,7 +34,6 @@ int main(){
                     else
                         cout << N - curr + *places.begin() << '\n';
                 }
-            break;
         }
     }
 }

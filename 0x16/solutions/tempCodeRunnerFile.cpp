@@ -1,0 +1,1 @@
+hu.find(t) != hu.end()
